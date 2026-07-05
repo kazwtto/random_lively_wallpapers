@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pink Shop</title>
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body>
+        <div id="wallpaper">
+            <canvas id="gif-base" class="layer"></canvas>
+            <canvas id="gif-ory" class="layer"></canvas>
+        </div>
+        <button id="gear-btn" title="Settings">&#9881;</button>
+        <div id="controls">
+            <h3 data-i18n="settings">Settings</h3>
+            <div class="ctrl-row">
+                <span class="ctrl-label" data-i18n="ory">Ory</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-ory" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="ctrl-row">
+                <span class="ctrl-label" data-i18n="music">Music</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-music" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="ctrl-row">
+                <span class="ctrl-label" data-i18n="volume">Volume</span>
+                <div class="vol-wrap">
+                    <span class="vol-icon" id="vol-icon">&#128266;</span>
+                    <input type="range" id="vol-slider" min="0" max="100" value="50">
+                    <span class="vol-val" id="vol-val">50%</span>
+                </div>
+            </div>
+            <div class="ctrl-row">
+                <span class="ctrl-label" data-i18n="speed">GIF Speed</span>
+                <div class="speed-wrap">
+                    <span style="font-size:12px;color:rgba(255,255,255,0.4);">&#9654;</span>
+                    <input type="range" id="speed-slider" min="10" max="300" value="100" step="5">
+                    <span class="speed-val" id="speed-val">1.0x</span>
+                </div>
+            </div>
+        </div>
+        <audio id="bgm" loop preload="auto">
+            <source src="assets/songs/shop_3.ogg" type="audio/ogg">
+        </audio>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,223 @@
+@font-face {
+  font-family: '8bitOperatorPlus-Bold';
+  src: url('../fonts/8bitOperatorPlus-Bold.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: '8bitOperatorPlus-Bold', monospace !important;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+}
+
+#wallpaper {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: #000;
+}
+
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+canvas.layer {
+    image-rendering: pixelated;
+}
+
+#gif-base {
+    z-index: 1;
+}
+
+#gif-ory {
+    z-index: 2;
+}
+
+#controls {
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+    z-index: 1000;
+    background: transparent;
+    border-style: solid;
+    border-width: 19px;
+    border-image: url('../images/borders/slice9_semitrans.png') 19 19 19 19 fill / 19px 19px 19px 19px;
+    padding: 19px 19px 19px 19px;
+    image-rendering: pixelated;
+    min-width: 260px;
+    color: #e0e0e0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    user-select: none;
+}
+
+#controls.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+#controls h3 {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 14px;
+}
+
+.ctrl-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.ctrl-row:last-child {
+    margin-bottom: 0;
+}
+
+.ctrl-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    white-space: nowrap;
+}
+
+.switch {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.switch input {
+    display: none;
+}
+
+.switch .slider {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    transition: background 0.25s ease;
+}
+
+.switch .slider::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 3px;
+    top: 3px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.25s ease;
+}
+
+.switch input:checked + .slider {
+    background: #6c63ff;
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(20px);
+}
+
+.vol-wrap,
+.speed-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 140px;
+}
+
+.vol-icon {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    flex-shrink: 0;
+    width: 18px;
+    text-align: center;
+}
+
+.vol-icon:hover {
+    color: #fff;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    background: #6c63ff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    background: #6c63ff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.vol-val,
+.speed-val {
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.45);
+    min-width: 32px;
+    text-align: right;
+}
+
+#gear-btn {
+    background: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    z-index: 999;
+    width: 0px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    opacity: 0;
+}
+
+#gear-btn.visible {
+    opacity: 1;
+}

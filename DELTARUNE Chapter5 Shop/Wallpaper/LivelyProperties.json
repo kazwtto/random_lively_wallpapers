@@ -1,0 +1,33 @@
+{
+  "hide_gear_btn": {
+    "text": "Hide config button on Wallpaper",
+    "type": "checkbox",
+    "value": false
+  },
+  "ory_enabled": {
+    "text": "Ory",
+    "type": "checkbox",
+    "value": true
+  },
+  "music_enabled": {
+    "text": "Music",
+    "type": "checkbox",
+    "value": true
+  },
+  "volume": {
+    "text": "Volume",
+    "type": "slider",
+    "value": 50,
+    "min": 0,
+    "max": 100,
+    "tick": 1
+  },
+  "gif_speed": {
+    "text": "Animation Speed",
+    "type": "slider",
+    "value": 100,
+    "min": 10,
+    "max": 300,
+    "tick": 5
+  }
+}
