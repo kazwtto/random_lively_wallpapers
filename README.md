@@ -1,4 +1,4 @@
-## Random Live Wallpepars project 
+## Random Live Wallpepars that I create randomly when I want 
 > for Lively Wallpaper, but something, for Wallpaper Engine too.
 
 ## Wallpapers:
